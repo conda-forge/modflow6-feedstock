@@ -1,5 +1,5 @@
 {% set name = "modflow6" %}
-{% set version = "6.1.0" %}
+{% set version = "6.1.1" %}
 
 package:
   name: {{ name|lower }}
@@ -7,7 +7,7 @@ package:
 
 source:
   url: https://github.com/MODFLOW-USGS/modflow6/releases/download/{{ version }}/mf{{ version }}.zip
-  sha256: 6023d52dbbdfc22ffb3c85d30322cc56cfde0aa2b59822ab9b03a4d5a381b59c
+  sha256: 64323dc8d3684b5faac916e396f81ea41fe013b8390a187f35eac32a81179e37
   patches:
     # use inherited environment variables
     - makefile.patch
@@ -33,8 +33,8 @@ about:
   license: CC0-1.0
   license_family: CC
   license_file: LICENSE.md
-  summary: 'Open-source groundwater flow model'
-  doc_url: https://water.usgs.gov/water-resources/software/MODFLOW-6/mf6io_{{ version}}.pdf
+  summary: Open-source groundwater flow model
+  doc_url: https://water.usgs.gov/water-resources/software/MODFLOW-6/mf6io_{{ version }}.pdf
   dev_url: https://github.com/MODFLOW-USGS/modflow6
 
 extra:
