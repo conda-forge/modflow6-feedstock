@@ -1,23 +1,62 @@
---- make/makefile.orig	2020-02-14 11:29:56.912351904 -0500
-+++ make/makefile	2020-02-14 11:30:29.936409577 -0500
+--- make/makefile.orig	2020-06-12 20:25:55.880629867 -0500
++++ make/makefile	2020-06-12 21:16:14.685560188 -0500
 @@ -42,15 +42,15 @@
  .SUFFIXES: .c .cpp .f .f90 .F90 .fpp .o
  
  # Define the Fortran compile flags
 -FC = gfortran
--FFLAGS = -O2 -fbacktrace 
+-FFLAGS = -O2 -fbacktrace -Bstatic -D_WIN32 -MMD -cpp 
 +#FC = gfortran
-+#FFLAGS = -O2 -fbacktrace 
++#FFLAGS = -O2 -fbacktrace -Bstatic -D_WIN32 -MMD -cpp 
  
  # Define the C compile flags
 -CC = gcc
--CFLAGS = -O2 -D_UF 
+-CFLAGS = -O2 -Bstatic -D_UF -MMD -cpp 
 +#CC = gcc
-+#CFLAGS = -O2 -D_UF 
++#CFLAGS = -O2 -Bstatic -D_UF -MMD -cpp 
  
  # Define the libraries
--SYSLIBS = 
-+#SYSLIBS = 
+-SYSLIBS = -lgfortran -lm 
++#SYSLIBS = -lgfortran -lm 
  
  OBJECTS = \
- $(OBJDIR)/kind.o \
+ $(OBJDIR)/OpenSpec.o \
+@@ -174,38 +174,26 @@
+ $(OBJDIR)/%.o : %.f
+ 	@mkdir -p $(@D)
+ 	$(FC) $(FFLAGS) -c $< -o $@ -I$(OBJDIR) -J$(OBJDIR) 
+-	cat ./obj_temp/$*.d >> Dependencies
+-	rm -f $*.d
+ 
+ $(OBJDIR)/%.o : %.f90
+ 	@mkdir -p $(@D)
+ 	$(FC) $(FFLAGS) -c $< -o $@ -I$(OBJDIR) -J$(OBJDIR) 
+-	cat ./obj_temp/$*.d >> Dependencies
+-	rm -f $*.d
+ 
+ $(OBJDIR)/%.o : %.F90
+ 	@mkdir -p $(@D)
+ 	$(FC) $(FFLAGS) -c $< -o $@ -I$(OBJDIR) -J$(OBJDIR) 
+-	cat ./obj_temp/$*.d >> Dependencies
+-	rm -f $*.d
+ 
+ $(OBJDIR)/%.o : %.fpp
+ 	@mkdir -p $(@D)
+ 	$(FC) $(FFLAGS) -c $< -o $@ -I$(OBJDIR) -J$(OBJDIR) 
+-	cat ./obj_temp/$*.d >> Dependencies
+-	rm -f $*.d
+ 
+ $(OBJDIR)/%.o : %.c
+ 	@mkdir -p $(@D)
+ 	$(CC) $(CFLAGS) -c $< -o $@
+-	cat ./obj_temp/$*.d >> Dependencies
+-	rm -f $*.d
+ 
+ $(OBJDIR)/%.o : %.cpp
+ 	@mkdir -p $(@D)
+ 	$(CC) $(CFLAGS) -c $< -o $@
+-	cat ./obj_temp/$*.d >> Dependencies
+-	rm -f $*.d
+ 
+ # Clean the object and module files and the executable
+ .PHONY : clean
