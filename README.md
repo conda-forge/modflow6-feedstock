@@ -11,7 +11,7 @@ Summary: Open-source groundwater flow model
 
 Development: https://github.com/MODFLOW-USGS/modflow6
 
-Documentation: https://water.usgs.gov/water-resources/software/MODFLOW-6/mf6io_6.1.1.pdf
+Documentation: https://water.usgs.gov/water-resources/software/MODFLOW-6/mf6io_6.2.0.pdf
 
 Current build status
 ====================
