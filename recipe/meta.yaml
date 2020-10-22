@@ -1,5 +1,5 @@
 {% set name = "modflow6" %}
-{% set version = "6.1.1" %}
+{% set version = "6.2.0" %}
 
 package:
   name: {{ name|lower }}
@@ -7,13 +7,13 @@ package:
 
 source:
   url: https://github.com/MODFLOW-USGS/modflow6/releases/download/{{ version }}/mf{{ version }}.zip
-  sha256: 64323dc8d3684b5faac916e396f81ea41fe013b8390a187f35eac32a81179e37
+  sha256: 8c262a5fe36f5ea066e047d94540972cd6aadab9a74ecb8d3e7d42667f437068
   patches:
     # use inherited environment variables
     - makefile.patch
 
 build:
-  number: 1
+  number: 0
   skip: true  # [win]
 
 requirements:
