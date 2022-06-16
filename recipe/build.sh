@@ -1,15 +1,21 @@
-#!/usr/bin/env bash
+#!/bin/bash
 set -ex
 
-export CFLAGS="$CFLAGS $LDFLAGS -D_UF"
-export FFLAGS="$FFLAGS $LDFLAGS -fbacktrace"
+BUILD_DIR="${SRC_DIR}/build"
 
-rm -rf bin/
-mkdir -p $PREFIX/bin
+# configure
+meson setup \
+	${BUILD_DIR} \
+	${SRC_DIR} \
+	--prefix ${PREFIX} \
+	--libdir "lib"
+pushd ${BUILD_DIR}
 
-pushd make
-# Cannot compile with -j ${CPU_COUNT} due to ordering issues
-make -f makefile
-# no make check or make install
-cp mf6 $PREFIX/bin/mf6
-popd
+# build
+ninja -j ${CPU_COUNT} all
+
+# check
+# ninja test
+
+# install
+ninja install
