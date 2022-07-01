@@ -1,7 +1,7 @@
 #!/bin/bash
 set -ex
 
-BUILD_DIR="${SRC_DIR}/build"
+BUILD_DIR="${SRC_DIR}/builddir"
 
 # configure
 meson setup \
@@ -9,13 +9,6 @@ meson setup \
 	${SRC_DIR} \
 	--prefix ${PREFIX} \
 	--libdir "lib"
-pushd ${BUILD_DIR}
 
-# build
-ninja -j ${CPU_COUNT} all
-
-# check
-# ninja test
-
-# install
-ninja install
+# build & install
+meson install -C ${BUILD_DIR}
