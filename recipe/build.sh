@@ -8,7 +8,8 @@ meson setup \
 	${BUILD_DIR} \
 	${SRC_DIR} \
 	--prefix ${PREFIX} \
-	--libdir "lib"
+	--libdir "lib" \
+	-Ddebug=false
 
 # build & install
 meson install -C ${BUILD_DIR}
