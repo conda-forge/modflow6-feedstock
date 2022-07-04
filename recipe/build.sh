@@ -1,8 +1,6 @@
 #!/bin/bash
 set -ex
 
-export FC=gfortran
-
 BUILD_DIR="${SRC_DIR}/builddir"
 
 # configure

@@ -1,8 +1,6 @@
 setlocal EnableDelayedExpansion
 @echo on
 
-set FC=gfortran
-
 :: meson options
 :: (set pkg_config_path so deps in host env can be found)
 set ^"MESON_OPTIONS=^
