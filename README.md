@@ -7,11 +7,19 @@ Package license: CC0-1.0
 
 Feedstock license: [BSD-3-Clause](https://github.com/conda-forge/modflow6-feedstock/blob/main/LICENSE.txt)
 
-Summary: Open-source groundwater flow model
+Summary: USGS Modular Hydrologic Model
 
 Development: https://github.com/MODFLOW-USGS/modflow6
 
 Documentation: https://water.usgs.gov/water-resources/software/MODFLOW-6/mf6io_6.3.0.pdf
+
+MODFLOW 6 is an object-oriented program and framework developed to provide
+a platform for supporting multiple models and multiple types of models
+within the same simulation. Within this framework, a regional-scale
+groundwater model may be coupled with multiple local-scale groundwater
+models. Or, a surface-water flow model could be coupled to multiple
+groundwater flow models.
+
 
 Current build status
 ====================
@@ -182,5 +190,6 @@ Feedstock Maintainers
 
 * [@Hofer-Julian](https://github.com/Hofer-Julian/)
 * [@jdhughes-usgs](https://github.com/jdhughes-usgs/)
+* [@mwtoews](https://github.com/mwtoews/)
 * [@scopatz](https://github.com/scopatz/)
 
