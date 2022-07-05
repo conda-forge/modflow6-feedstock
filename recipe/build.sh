@@ -5,11 +5,14 @@ BUILD_DIR="${SRC_DIR}/builddir"
 
 # configure
 meson setup \
-	${BUILD_DIR} \
-	${SRC_DIR} \
-	--prefix ${PREFIX} \
-	--libdir "lib" \
-	-Ddebug=false
+    ${MESON_ARGS} \
+    --prefix ${PREFIX} \
+    --libdir "lib" \
+    -Ddebug=false \
+    ${BUILD_DIR} ${SRC_DIR}
 
-# build & install
+# build
+meson compile -C ${BUILD_DIR} -j ${CPU_COUNT}
+
+# install
 meson install -C ${BUILD_DIR}
