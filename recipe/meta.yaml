@@ -10,7 +10,7 @@ source:
   sha256: d9f1d17a41b7517c329994a2f21dd1d5006f04e6c5611702167fa9a945ebc82c
 
 build:
-  number: 2
+  number: 3
 
 requirements:
   build:
@@ -28,7 +28,14 @@ about:
   license: CC0-1.0
   license_family: CC
   license_file: LICENSE.md
-  summary: Open-source groundwater flow model
+  summary: USGS Modular Hydrologic Model
+  description: |
+    MODFLOW 6 is an object-oriented program and framework developed to provide
+    a platform for supporting multiple models and multiple types of models
+    within the same simulation. Within this framework, a regional-scale
+    groundwater model may be coupled with multiple local-scale groundwater
+    models. Or, a groundwater flow model could be coupled to a groundwater
+    transport model of a single solute species.
   doc_url: https://water.usgs.gov/water-resources/software/MODFLOW-6/mf6io_{{ version }}.pdf
   dev_url: https://github.com/MODFLOW-USGS/modflow6
 

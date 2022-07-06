@@ -1,15 +1,37 @@
 #!/bin/bash
 set -ex
 
+# Some conda-forge compilers define MESON_ARGS which needs to be amended or modified
+if [[ "${MESON_ARGS}" != *"--prefix"* ]]; then
+    MESON_ARGS="${MESON_ARGS} --prefix ${PREFIX}"
+fi
+if [[ "${MESON_ARGS}" != *"-Dlibdir="* ]] && [[ "${MESON_ARGS}" != *"--libdir"* ]]; then
+    # avoid choosing both -Dlibdir=lib and --libdir lib
+    MESON_ARGS="${MESON_ARGS} --libdir lib"
+fi
+if [[ "${MESON_ARGS}" == *"--buildtype release"* ]]; then
+    # remove --buildtype, as build will autoconfigure optimization 2
+    MESON_ARGS="${MESON_ARGS/--buildtype release/}"
+fi
+if [[ "${MESON_ARGS}" != *"-Ddebug=false"* ]]; then
+    MESON_ARGS="${MESON_ARGS} -Ddebug=false"
+fi
+
 BUILD_DIR="${SRC_DIR}/builddir"
 
 # configure
-meson setup \
-	${BUILD_DIR} \
-	${SRC_DIR} \
-	--prefix ${PREFIX} \
-	--libdir "lib" \
-	-Ddebug=false
+meson setup ${MESON_ARGS} ${BUILD_DIR} ${SRC_DIR}
 
-# build & install
+# build
+meson compile -C ${BUILD_DIR} -j ${CPU_COUNT}
+
+# test (run one example)
+if [[ "${CONDA_BUILD_CROSS_COMPILATION}" != "1" ]]; then
+    pushd examples/ex-gwf-twri01
+    sed -i'.bak' 's/ .\\/ /' ex-gwf-twri01.nam
+    ${BUILD_DIR}/src/mf6
+    popd
+fi
+
+# install
 meson install -C ${BUILD_DIR}
