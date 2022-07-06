@@ -34,8 +34,8 @@ about:
     a platform for supporting multiple models and multiple types of models
     within the same simulation. Within this framework, a regional-scale
     groundwater model may be coupled with multiple local-scale groundwater
-    models. Or, a surface-water flow model could be coupled to multiple
-    groundwater flow models.
+    models. Or, a groundwater flow model could be coupled to a groundwater
+    transport model of a single solute species.
   doc_url: https://water.usgs.gov/water-resources/software/MODFLOW-6/mf6io_{{ version }}.pdf
   dev_url: https://github.com/MODFLOW-USGS/modflow6
 
