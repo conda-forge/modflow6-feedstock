@@ -1,16 +1,32 @@
-setlocal EnableDelayedExpansion
-@echo on
-
 :: meson options
-:: (set pkg_config_path so deps in host env can be found)
 set ^"MESON_OPTIONS=^
   --prefix="%LIBRARY_PREFIX%" ^
-  -Ddebug=false ^
+  -Ddebug=true ^
+  -Doptimization=0 ^
  ^"
 
-:: configure build using meson
-meson setup builddir !MESON_OPTIONS!
+set "BUILD_DIR=%SRC_DIR%\builddir"
+
+:: configure
+meson setup %MESON_OPTIONS% %BUILD_DIR% %SRC_DIR%
 if errorlevel 1 exit 1
 
-meson install -C builddir
+:: build
+meson compile -C %BUILD_DIR% -j %CPU_COUNT%
+if errorlevel 1 exit 1
+
+:: test (run one example)
+cd examples\ex-gwf-twri01
+%BUILD_DIR%\src\mf6.exe
+if errorlevel 1 (
+  dir
+  type mfsim.nam
+  type mfsim.lst
+  dumpbin /dependents %BUILD_DIR%\src\mf6.exe
+  exit 1
+)
+cd ..\..
+
+:: install
+meson install -C %BUILD_DIR%
 if errorlevel 1 exit 1
