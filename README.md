@@ -17,8 +17,8 @@ MODFLOW 6 is an object-oriented program and framework developed to provide
 a platform for supporting multiple models and multiple types of models
 within the same simulation. Within this framework, a regional-scale
 groundwater model may be coupled with multiple local-scale groundwater
-models. Or, a surface-water flow model could be coupled to multiple
-groundwater flow models.
+models. Or, a groundwater flow model could be coupled to a groundwater
+transport model of a single solute species.
 
 
 Current build status
@@ -50,13 +50,6 @@ Current build status
               <td>
                 <a href="https://dev.azure.com/conda-forge/feedstock-builds/_build/latest?definitionId=9080&branchName=main">
                   <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/modflow6-feedstock?branchName=main&jobName=osx&configuration=osx_64_" alt="variant">
-                </a>
-              </td>
-            </tr><tr>
-              <td>win_64</td>
-              <td>
-                <a href="https://dev.azure.com/conda-forge/feedstock-builds/_build/latest?definitionId=9080&branchName=main">
-                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/modflow6-feedstock?branchName=main&jobName=win&configuration=win_64_" alt="variant">
                 </a>
               </td>
             </tr>
