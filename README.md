@@ -1,11 +1,11 @@
-About modflow6
-==============
+About modflow6-feedstock
+========================
+
+Feedstock license: [BSD-3-Clause](https://github.com/conda-forge/modflow6-feedstock/blob/main/LICENSE.txt)
 
 Home: https://www.usgs.gov/software/modflow-6-usgs-modular-hydrologic-model
 
 Package license: CC0-1.0
-
-Feedstock license: [BSD-3-Clause](https://github.com/conda-forge/modflow6-feedstock/blob/main/LICENSE.txt)
 
 Summary: USGS Modular Hydrologic Model
 
