@@ -18,6 +18,7 @@ if [[ "${MESON_ARGS}" != *"-Ddebug=false"* ]]; then
 fi
 
 BUILD_DIR="${SRC_DIR}/builddir"
+EXAMPLE_DIR="${SRC_DIR}/.mf6minsim"
 
 # configure
 meson setup ${MESON_ARGS} ${BUILD_DIR} ${SRC_DIR}
@@ -27,7 +28,7 @@ meson compile -C ${BUILD_DIR} -j ${CPU_COUNT}
 
 # test (run one example)
 if [[ "${CONDA_BUILD_CROSS_COMPILATION}" != "1" ]]; then
-    pushd .mf6minsim/
+    pushd ${EXAMPLE_DIR}
     ${BUILD_DIR}/src/mf6
     popd
 fi
