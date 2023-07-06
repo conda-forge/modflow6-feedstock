@@ -26,12 +26,8 @@ meson setup ${MESON_ARGS} ${BUILD_DIR} ${SRC_DIR}
 # build
 meson compile -C ${BUILD_DIR} -j ${CPU_COUNT}
 
-# test (run one example)
-if [[ "${CONDA_BUILD_CROSS_COMPILATION}" != "1" ]]; then
-    pushd ${EXAMPLE_DIR}
-    ${BUILD_DIR}/src/mf6
-    popd
-fi
+# test
+meson test --verbose --no-rebuild -C ${BUILD_DIR}
 
 # install
 meson install -C ${BUILD_DIR}
