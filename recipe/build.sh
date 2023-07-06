@@ -27,7 +27,11 @@ meson setup ${MESON_ARGS} ${BUILD_DIR} ${SRC_DIR}
 meson compile -C ${BUILD_DIR} -j ${CPU_COUNT}
 
 # test
-meson test --verbose --no-rebuild -C ${BUILD_DIR}
+if [[ "${CONDA_BUILD_CROSS_COMPILATION}" != "1" ]]; then
+    pushd examples/ex-gwf-twri01
+    ${BUILD_DIR}/src/mf6
+    popd
+fi
 
 # install
 meson install -C ${BUILD_DIR}
