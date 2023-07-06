@@ -1,17 +1,17 @@
-About modflow6
-==============
+About modflow6-feedstock
+========================
+
+Feedstock license: [BSD-3-Clause](https://github.com/conda-forge/modflow6-feedstock/blob/main/LICENSE.txt)
 
 Home: https://www.usgs.gov/software/modflow-6-usgs-modular-hydrologic-model
 
 Package license: CC0-1.0
 
-Feedstock license: [BSD-3-Clause](https://github.com/conda-forge/modflow6-feedstock/blob/main/LICENSE.txt)
-
 Summary: USGS Modular Hydrologic Model
 
 Development: https://github.com/MODFLOW-USGS/modflow6
 
-Documentation: https://water.usgs.gov/water-resources/software/MODFLOW-6/mf6io_6.3.0.pdf
+Documentation: https://water.usgs.gov/water-resources/software/MODFLOW-6/mf6io_6.4.0.pdf
 
 MODFLOW 6 is an object-oriented program and framework developed to provide
 a platform for supporting multiple models and multiple types of models
@@ -42,14 +42,14 @@ Current build status
               <td>linux_64</td>
               <td>
                 <a href="https://dev.azure.com/conda-forge/feedstock-builds/_build/latest?definitionId=9080&branchName=main">
-                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/modflow6-feedstock?branchName=main&jobName=linux&configuration=linux_64_" alt="variant">
+                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/modflow6-feedstock?branchName=main&jobName=linux&configuration=linux%20linux_64_" alt="variant">
                 </a>
               </td>
             </tr><tr>
               <td>osx_64</td>
               <td>
                 <a href="https://dev.azure.com/conda-forge/feedstock-builds/_build/latest?definitionId=9080&branchName=main">
-                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/modflow6-feedstock?branchName=main&jobName=osx&configuration=osx_64_" alt="variant">
+                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/modflow6-feedstock?branchName=main&jobName=osx&configuration=osx%20osx_64_" alt="variant">
                 </a>
               </td>
             </tr>
