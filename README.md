@@ -11,7 +11,7 @@ Summary: USGS Modular Hydrologic Model
 
 Development: https://github.com/MODFLOW-USGS/modflow6
 
-Documentation: https://water.usgs.gov/water-resources/software/MODFLOW-6/mf6io_6.4.2.pdf
+Documentation: https://water.usgs.gov/water-resources/software/MODFLOW-6/mf6io_6.4.3.pdf
 
 MODFLOW 6 is an object-oriented program and framework developed to provide
 a platform for supporting multiple models and multiple types of models
@@ -154,7 +154,7 @@ available continuous integration services. Thanks to the awesome service provide
 [CircleCI](https://circleci.com/), [AppVeyor](https://www.appveyor.com/),
 [Drone](https://cloud.drone.io/welcome), and [TravisCI](https://travis-ci.com/)
 it is possible to build and upload installable packages to the
-[conda-forge](https://anaconda.org/conda-forge) [Anaconda-Cloud](https://anaconda.org/)
+[conda-forge](https://anaconda.org/conda-forge) [anaconda.org](https://anaconda.org/)
 channel for Linux, Windows and OSX respectively.
 
 To manage the continuous integration and simplify feedstock maintenance
