@@ -14,7 +14,8 @@ build:
 
 requirements:
   build:
-    - {{ compiler('fortran') }}
+    - {{ compiler('fortran') }} # [not win]
+    - conda-forge/label/m2w64-experimental::mingw-w64-ucrt-x86_64-gcc-fortran # [win]
     - meson
     - ninja
 
