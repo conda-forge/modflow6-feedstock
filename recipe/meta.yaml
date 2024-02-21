@@ -14,8 +14,9 @@ build:
 
 requirements:
   build:
-    - {{ compiler('fortran') }}
-    - {{ compiler('m2w64_fortran') }}  # [win]
+    - {{ compiler("fortran") }}        # [linux or osx]
+    - {{ compiler("m2w64_fortran") }}  # [win]
+    - m2w64-toolchain                  # [win]
     - meson
     - ninja
 
