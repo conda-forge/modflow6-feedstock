@@ -20,6 +20,7 @@ requirements:
     - ninja
   run:
     - ucrt  # [win]
+    - mingw-w64-ucrt-x86_64-gcc-libs  # [win]
     - mingw-w64-ucrt-x86_64-gcc-libgfortran  # [win]
 
 test:
