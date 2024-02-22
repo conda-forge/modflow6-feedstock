@@ -18,6 +18,8 @@ requirements:
     - mingw-w64-ucrt-x86_64-gcc-fortran  # [win]
     - meson
     - ninja
+  run:
+    - ucrt
 
 test:
   commands:
