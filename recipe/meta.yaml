@@ -19,7 +19,7 @@ requirements:
     - meson
     - ninja
   run:
-    - ucrt
+    - ucrt  # [win]
 
 test:
   commands:
