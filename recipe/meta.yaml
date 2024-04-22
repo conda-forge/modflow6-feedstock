@@ -38,7 +38,7 @@ requirements:
     - libblas
     - libcblas
     - liblapack
-    - python
+    # - python
     - cython
     - meson-python
     - ninja
