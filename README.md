@@ -39,38 +39,17 @@ Current build status
         <table>
           <thead><tr><th>Variant</th><th>Status</th></tr></thead>
           <tbody><tr>
-              <td>linux_64</td>
+              <td>win_64_numpy1.22</td>
               <td>
                 <a href="https://dev.azure.com/conda-forge/feedstock-builds/_build/latest?definitionId=9080&branchName=main">
-                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/modflow6-feedstock?branchName=main&jobName=linux&configuration=linux%20linux_64_" alt="variant">
+                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/modflow6-feedstock?branchName=main&jobName=win&configuration=win%20win_64_numpy1.22" alt="variant">
                 </a>
               </td>
             </tr><tr>
-              <td>linux_aarch64</td>
+              <td>win_64_numpy1.23</td>
               <td>
                 <a href="https://dev.azure.com/conda-forge/feedstock-builds/_build/latest?definitionId=9080&branchName=main">
-                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/modflow6-feedstock?branchName=main&jobName=linux&configuration=linux%20linux_aarch64_" alt="variant">
-                </a>
-              </td>
-            </tr><tr>
-              <td>linux_ppc64le</td>
-              <td>
-                <a href="https://dev.azure.com/conda-forge/feedstock-builds/_build/latest?definitionId=9080&branchName=main">
-                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/modflow6-feedstock?branchName=main&jobName=linux&configuration=linux%20linux_ppc64le_" alt="variant">
-                </a>
-              </td>
-            </tr><tr>
-              <td>osx_64</td>
-              <td>
-                <a href="https://dev.azure.com/conda-forge/feedstock-builds/_build/latest?definitionId=9080&branchName=main">
-                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/modflow6-feedstock?branchName=main&jobName=osx&configuration=osx%20osx_64_" alt="variant">
-                </a>
-              </td>
-            </tr><tr>
-              <td>osx_arm64</td>
-              <td>
-                <a href="https://dev.azure.com/conda-forge/feedstock-builds/_build/latest?definitionId=9080&branchName=main">
-                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/modflow6-feedstock?branchName=main&jobName=osx&configuration=osx%20osx_arm64_" alt="variant">
+                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/modflow6-feedstock?branchName=main&jobName=win&configuration=win%20win_64_numpy1.23" alt="variant">
                 </a>
               </td>
             </tr>
@@ -205,5 +184,6 @@ Feedstock Maintainers
 * [@Hofer-Julian](https://github.com/Hofer-Julian/)
 * [@jdhughes-usgs](https://github.com/jdhughes-usgs/)
 * [@mwtoews](https://github.com/mwtoews/)
+* [@scharlton2](https://github.com/scharlton2/)
 * [@scopatz](https://github.com/scopatz/)
 
