@@ -10,15 +10,44 @@ source:
   sha256: a737521126efc3295b818acc951a745d7b914446836c7931b0b52998f3934e2d
 
 build:
-  number: 0
-  skip: true  # [win]
+  number: 1
+  skip: true  # [not win]
 
 requirements:
   build:
-    - {{ compiler('fortran') }}
-    - {{ compiler('m2w64_fortran') }}  # [win]
-    - meson
+    - python                                 # [build_platform != target_platform]
+    - cross-python_{{ target_platform }}     # [build_platform != target_platform]
+    - cython                                 # [build_platform != target_platform]
+    - numpy                                  # [build_platform != target_platform]
+    - pybind11                               # [build_platform != target_platform]
+    - meson                                  # [build_platform != target_platform]
+    - cmake                                  # [build_platform != target_platform]
+    - ninja                                  # [build_platform != target_platform]
+    - pkg-config                             # [build_platform != target_platform]
+    - {{ compiler('c') }}
+    - {{ compiler('cxx') }}
+    - {{ compiler('fortran') }}              # [unix]
+    # pythran code needs clang-cl on windows
+    - clang                                  # [win]
+    # use flang as fortran compiler on windows (uses clang driver)
+    - flang <18                              # [win]
+    # use llvm linker for both of the above
+    - lld                                    # [win]
+  host:
+    - compiler-rt                            # [win]
+    - libblas
+    - libcblas
+    - liblapack
+    - python
+    - cython
+    - meson-python
     - ninja
+    - pkg-config
+    - python-build
+    - pybind11
+    - pythran
+    - numpy
+    - pip
 
 test:
   commands:
@@ -46,3 +75,4 @@ extra:
     - jdhughes-usgs
     - Hofer-Julian
     - scopatz
+    - scharlton2
