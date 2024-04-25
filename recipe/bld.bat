@@ -1,3 +1,12 @@
+:: install intel fortran ifort
+set URL=https://registrationcenter-download.intel.com/akdlm/irc_nas/18857/w_HPCKit_p_2022.3.0.9564_offline.exe
+set COMPONENTS=intel.oneapi.win.ifort-compiler
+curl --output %TEMP%\webimage.exe --url %URL%  --retry 5 --retry-delay 5
+start /b /wait %TEMP%\webimage.exe -s -x -f %TEMP%\webimage_extracted --log %TEMP%\extract.log
+del %TEMP%\webimage.exe
+%TEMP%\webimage_extracted\bootstrapper.exe -s --action install --components=%COMPONENTS% --eula=accept -p=NEED_VS2017_INTEGRATION=0 -p=NEED_VS2019_INTEGRATION=0 -p=NEED_VS2022_INTEGRATION=1 --log-dir=%TEMP%
+set FC=ifort
+
 :: meson options
 set ^"MESON_OPTIONS=^
   --prefix="%LIBRARY_PREFIX%" ^
