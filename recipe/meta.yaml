@@ -14,6 +14,7 @@ build:
 
 requirements:
   build:
+    - {{ compiler('fortran') }}  # [not win]
     - meson
     - ninja
 
