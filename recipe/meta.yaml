@@ -10,13 +10,11 @@ source:
   sha256: a737521126efc3295b818acc951a745d7b914446836c7931b0b52998f3934e2d
 
 build:
-  number: 0
-  skip: true  # [win]
+  number: 1
 
 requirements:
   build:
-    - {{ compiler('fortran') }}
-    - {{ compiler('m2w64_fortran') }}  # [win]
+    - {{ compiler('fortran') }}  # [not win]
     - meson
     - ninja
 
@@ -46,3 +44,4 @@ extra:
     - jdhughes-usgs
     - Hofer-Julian
     - scopatz
+    - scharlton2
