@@ -13,6 +13,10 @@ if [[ "${MESON_ARGS}" == *"--buildtype release"* ]]; then
     # remove --buildtype, as build will autoconfigure optimization 2
     MESON_ARGS="${MESON_ARGS/--buildtype release/}"
 fi
+if [[ "${MESON_ARGS}" == *"-Dbuildtype=release"* ]]; then
+    # remove -Dbuildtype=release, as build will autoconfigure optimization 2
+    MESON_ARGS="${MESON_ARGS/-Dbuildtype=release/}"
+fi
 if [[ "${MESON_ARGS}" != *"-Ddebug=false"* ]]; then
     MESON_ARGS="${MESON_ARGS} -Ddebug=false"
 fi

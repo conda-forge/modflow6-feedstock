@@ -4,7 +4,15 @@
 set ^"MESON_OPTIONS=^
   --prefix="%LIBRARY_PREFIX%" ^
   -Ddebug=false ^
+  -Dfortran_std=none ^
  ^"
+
+if /I "%FC%" == "flang-new" (
+  set ^"MESON_OPTIONS=^
+    %MESON_OPTIONS% ^
+    -Dfortran_std=none ^
+   ^"
+)
 
 set "BUILD_DIR=%SRC_DIR%\builddir"
 
