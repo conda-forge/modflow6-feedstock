@@ -4,7 +4,6 @@
 set ^"MESON_OPTIONS=^
   --prefix="%LIBRARY_PREFIX%" ^
   -Ddebug=false ^
-  -Dfortran_std=none ^
  ^"
 
 if /I "%FC%" == "flang-new" (
