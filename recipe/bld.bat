@@ -17,7 +17,10 @@ set "BUILD_DIR=%SRC_DIR%\builddir"
 
 :: configure
 meson setup %MESON_OPTIONS% %BUILD_DIR% %SRC_DIR%
-if errorlevel 1 exit 1
+if errorlevel 1 (
+  type %SRC_DIR%\builddir\meson-logs\meson-log.txt
+  exit 1
+)
 
 :: build
 meson compile -C %BUILD_DIR% -j %CPU_COUNT%
