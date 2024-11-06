@@ -1,13 +1,4 @@
-:: install intel-classic 2021.7 fortran ifort
-set URL=https://registrationcenter-download.intel.com/akdlm/irc_nas/18857/w_HPCKit_p_2022.3.0.9564_offline.exe
-set COMPONENTS=intel.oneapi.win.ifort-compiler
-set FC=ifort
-
-curl --output %TEMP%\webimage.exe --url %URL%  --retry 5 --retry-delay 5
-start /b /wait %TEMP%\webimage.exe -s -x -f %TEMP%\webimage_extracted --log %TEMP%\extract.log
-del %TEMP%\webimage.exe
-%TEMP%\webimage_extracted\bootstrapper.exe -s --action install --components=%COMPONENTS% --eula=accept -p=NEED_VS2017_INTEGRATION=0 -p=NEED_VS2019_INTEGRATION=0 -p=NEED_VS2022_INTEGRATION=0 --log-dir=%TEMP%
-call "C:\Program Files (x86)\Intel\oneAPI\setvars.bat" intel64 vs2022
+@echo on
 
 :: meson options
 set ^"MESON_OPTIONS=^
@@ -15,11 +6,21 @@ set ^"MESON_OPTIONS=^
   -Ddebug=false ^
  ^"
 
+if /I "%FC%" == "flang-new" (
+  set ^"MESON_OPTIONS=^
+    %MESON_OPTIONS% ^
+    -Dfortran_std=none ^
+   ^"
+)
+
 set "BUILD_DIR=%SRC_DIR%\builddir"
 
 :: configure
 meson setup %MESON_OPTIONS% %BUILD_DIR% %SRC_DIR%
-if errorlevel 1 exit 1
+if errorlevel 1 (
+  type %SRC_DIR%\builddir\meson-logs\meson-log.txt
+  exit 1
+)
 
 :: build
 meson compile -C %BUILD_DIR% -j %CPU_COUNT%
