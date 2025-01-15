@@ -15,7 +15,7 @@ build:
 requirements:
   build:
     - {{ compiler('fortran') }}   # [not win]
-    - {{ stdlib("c") }}           # [not win]
+    - {{ stdlib("c") }}
     - gfortran                    # [win]
     - meson
     - ninja
