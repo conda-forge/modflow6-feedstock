@@ -37,5 +37,10 @@ if [[ "${CONDA_BUILD_CROSS_COMPILATION}" != "1" ]]; then
     popd
 fi
 
+# test using meson
+if [[ "${CONDA_BUILD_CROSS_COMPILATION}" != "1" ]]; then
+    meson test -C ${BUILD_DIR} -j ${CPU_COUNT}
+fi
+
 # install
 meson install -C ${BUILD_DIR}
