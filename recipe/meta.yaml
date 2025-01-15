@@ -19,6 +19,8 @@ requirements:
     - gfortran                    # [win]
     - meson
     - ninja
+  run:
+    - libgfortran                 # [win]
 
 test:
   commands:
