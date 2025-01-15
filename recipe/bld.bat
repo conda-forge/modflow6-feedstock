@@ -31,7 +31,10 @@ popd
 
 :: test
 meson test -C %BUILD_DIR% -j %CPU_COUNT%
-if errorlevel 1 exit 1
+if errorlevel 1 (
+  type %BUILD_DIR%\meson-logs\testlog.txt
+  exit 1
+)
 
 :: install
 meson install -C %BUILD_DIR%
