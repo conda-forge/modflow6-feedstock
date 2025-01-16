@@ -30,7 +30,7 @@ if errorlevel 1 (
 popd
 
 :: test
-meson test -C %BUILD_DIR%
+meson test -C %BUILD_DIR% -j %CPU_COUNT%
 if errorlevel 1 (
   type %BUILD_DIR%\meson-logs\testlog.txt
   exit 1
