@@ -25,6 +25,9 @@ requirements:
 test:
   commands:
     - mf6 --help
+    - mf6 --license
+    - mf6 --compiler
+    - mf6 --compiler-opt
 
 about:
   home: https://www.usgs.gov/software/modflow-6-usgs-modular-hydrologic-model
