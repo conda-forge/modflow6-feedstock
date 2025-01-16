@@ -26,7 +26,7 @@ test:
   commands:
     - mf6 --help
     - mf6 --license
-    - mf6 --compiler
+    - mf6 --compiler  # [not osx]
     - mf6 --compiler-opt
 
 about:
