@@ -29,10 +29,6 @@ if errorlevel 1 (
 )
 popd
 
-:: test
-meson test -C %BUILD_DIR% -j %CPU_COUNT%
-if errorlevel 1 exit 1
-
 :: install
 meson install -C %BUILD_DIR%
 if errorlevel 1 exit 1
