@@ -10,18 +10,24 @@ source:
   sha256: 98158735102cd3e98106df8962d215bd5107556e53e067ac791dcdc1f801e7c5
 
 build:
-  number: 0
+  number: 1
 
 requirements:
   build:
-    - {{ compiler('fortran') }}  # [not win]
-    - {{ stdlib("c") }}    # [not win]
+    - {{ compiler('fortran') }}   # [not win]
+    - {{ stdlib("c") }}           # [not win]
+    - gfortran                    # [win]
     - meson
     - ninja
+  run:
+    - libgfortran                 # [win]
 
 test:
   commands:
     - mf6 --help
+    - mf6 --license
+    - mf6 --compiler  # [not osx]
+    - mf6 --compiler-opt
 
 about:
   home: https://www.usgs.gov/software/modflow-6-usgs-modular-hydrologic-model
