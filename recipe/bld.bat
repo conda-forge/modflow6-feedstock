@@ -5,6 +5,16 @@ set ^"MESON_OPTIONS=^
   -Ddebug=false ^
  ^"
 
+if /I "%FC%" == "flang-new" (
+  :: flang requires fortran_std=none
+  :: overides default_options in top-level meson-build
+  :: (default f2008)
+  set ^"MESON_OPTIONS=^
+    %MESON_OPTIONS% ^
+    -Dfortran_std=none ^
+   ^"
+)
+
 set "BUILD_DIR=%SRC_DIR%\builddir"
 
 :: configure
