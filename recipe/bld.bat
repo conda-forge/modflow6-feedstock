@@ -5,7 +5,7 @@ set ^"MESON_OPTIONS=^
   -Ddebug=false ^
  ^"
 
-if /I "%FC%" == "flang-new" (
+if /I "%fortran_compiler%" == "flang" (
   :: flang requires fortran_std=none
   :: overides default_options in top-level meson-build
   :: (default f2008)
