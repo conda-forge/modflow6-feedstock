@@ -1,5 +1,6 @@
 :: meson options
 set ^"MESON_OPTIONS=^
+  %MESON_OPTIONS% ^
   --prefix="%LIBRARY_PREFIX%" ^
   -Ddebug=false ^
  ^"
