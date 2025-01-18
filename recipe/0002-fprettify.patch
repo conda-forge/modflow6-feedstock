@@ -1,0 +1,25 @@
+From c4bcd8b661b34dd80c94695b869d8e5799b4c654 Mon Sep 17 00:00:00 2001
+From: wpbonelli <wbonelli@ucar.edu>
+Date: Thu, 16 Jan 2025 08:39:39 -0500
+Subject: [PATCH 2/2] fprettify
+
+---
+ src/Utilities/Memory/MemoryHelper.f90 | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+diff --git a/src/Utilities/Memory/MemoryHelper.f90 b/src/Utilities/Memory/MemoryHelper.f90
+index 0e8c5c4f8..8cd4dbb4f 100644
+--- a/src/Utilities/Memory/MemoryHelper.f90
++++ b/src/Utilities/Memory/MemoryHelper.f90
+@@ -29,7 +29,7 @@ contains
+     if (present(subcomponent)) then
+       call mem_check_length(subcomponent, LENCOMPONENTNAME, "package")
+     end if
+-    
++
+     if (present(context)) then
+       call mem_check_length(context, LENCONTEXTNAME, "context")
+     end if
+-- 
+2.47.1.windows.1
+

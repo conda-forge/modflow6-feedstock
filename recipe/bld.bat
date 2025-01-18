@@ -1,8 +1,21 @@
 :: meson options
 set ^"MESON_OPTIONS=^
+  %MESON_OPTIONS% ^
   --prefix="%LIBRARY_PREFIX%" ^
   -Ddebug=false ^
  ^"
+
+if /I "%fortran_compiler%" == "flang" (
+  :: flang requires fortran_std=none
+  :: overides default_options in top-level meson-build
+  :: (default f2008)
+  set ^"MESON_OPTIONS=^
+    %MESON_OPTIONS% ^
+    -Dfortran_std=none ^
+   ^"
+  :: meson looks for ar or gar if AR isn't set
+  set "AR=llvm-lib"
+)
 
 set "BUILD_DIR=%SRC_DIR%\builddir"
 
