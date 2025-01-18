@@ -8,6 +8,9 @@ package:
 source:
   url: https://github.com/MODFLOW-USGS/modflow6/releases/download/{{ version }}/mf{{ version }}_linux.zip
   sha256: 98158735102cd3e98106df8962d215bd5107556e53e067ac791dcdc1f801e7c5
+  patches:
+    - 0001-fix-MemoryHelper.f90-Added-optional-checks.patch
+    - 0002-fprettify.patch
 
 build:
   number: 2
