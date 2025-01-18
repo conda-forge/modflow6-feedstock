@@ -13,6 +13,8 @@ if /I "%fortran_compiler%" == "flang" (
     %MESON_OPTIONS% ^
     -Dfortran_std=none ^
    ^"
+  :: meson looks for ar or gar if AR isn't set
+  set "AR=llvm-lib"
 )
 
 set "BUILD_DIR=%SRC_DIR%\builddir"
