@@ -1,5 +1,5 @@
 {% set name = "modflow6" %}
-{% set version = "6.6.0" %}
+{% set version = "6.6.1" %}
 
 package:
   name: {{ name|lower }}
@@ -7,10 +7,10 @@ package:
 
 source:
   url: https://github.com/MODFLOW-USGS/modflow6/releases/download/{{ version }}/mf{{ version }}_linux.zip
-  sha256: 98158735102cd3e98106df8962d215bd5107556e53e067ac791dcdc1f801e7c5
+  sha256: 963d55389cf1bc3c994ccb71f54b5d202d194f7ae4d105ec3e4eca9d3a13e89f
 
 build:
-  number: 1
+  number: 0
 
 requirements:
   build:
