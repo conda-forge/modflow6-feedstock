@@ -210,7 +210,7 @@ Feedstock Maintainers
 =====================
 
 * [@Hofer-Julian](https://github.com/Hofer-Julian/)
-* [@jdhughes-usgs](https://github.com/jdhughes-usgs/)
+* [@jdhughes-dev](https://github.com/jdhughes-dev/)
 * [@mwtoews](https://github.com/mwtoews/)
 * [@scharlton2](https://github.com/scharlton2/)
 * [@scopatz](https://github.com/scopatz/)
