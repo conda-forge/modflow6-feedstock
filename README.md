@@ -11,7 +11,7 @@ Summary: USGS Modular Hydrologic Model
 
 Development: https://github.com/MODFLOW-USGS/modflow6
 
-Documentation: https://water.usgs.gov/water-resources/software/MODFLOW-6/mf6io_6.6.1.pdf
+Documentation: https://water.usgs.gov/water-resources/software/MODFLOW-6/mf6io_6.6.2.pdf
 
 MODFLOW 6 is an object-oriented program and framework developed to provide
 a platform for supporting multiple models and multiple types of models
@@ -210,7 +210,7 @@ Feedstock Maintainers
 =====================
 
 * [@Hofer-Julian](https://github.com/Hofer-Julian/)
-* [@jdhughes-usgs](https://github.com/jdhughes-usgs/)
+* [@jdhughes-dev](https://github.com/jdhughes-dev/)
 * [@mwtoews](https://github.com/mwtoews/)
 * [@scharlton2](https://github.com/scharlton2/)
 * [@scopatz](https://github.com/scopatz/)
