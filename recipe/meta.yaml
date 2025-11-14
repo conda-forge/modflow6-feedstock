@@ -10,11 +10,11 @@ source:
   sha256: 019072915f5ae54cba01b53f5bfac060c0d050b81ded0992c149db9fd58fa5ca
 
 build:
-  number: 0
+  number: 1
 
 requirements:
   build:
-    - {{ compiler('fortran') }}   # [not win]
+    - {{ compiler("fortran") }}
     - {{ stdlib("c") }}           # [not win]
     - gfortran                    # [win]
     - meson
