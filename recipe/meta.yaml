@@ -1,5 +1,5 @@
 {% set name = "modflow6" %}
-{% set version = "6.7.0" %}
+{% set version = "6.8.0" %}
 
 package:
   name: {{ name|lower }}
@@ -7,17 +7,24 @@ package:
 
 source:
   url: https://github.com/MODFLOW-USGS/modflow6/releases/download/{{ version }}/mf{{ version }}_linux.zip
-  sha256: f83e743bac1b3009836a44e6e4aa4b4c522ac2e2c7d291e280db47f68353ebdc
+  sha256: 33edf988b672a9f282d6773304c079d0f180541f6fe0c6555265d9c71841256e
 
 build:
   number: 0
+  # mf6 embeds the build prefix in a Fortran string literal via
+  # compiler_options(). Fortran literals are length-counted rather than
+  # NUL-terminated, so substituting the prefix at install time shifts the
+  # literals packed behind it and corrupts them.
+  detect_binary_files_with_prefix: false
+  # upstream no longer supports Intel macOS
+  skip: true  # [osx and x86_64]
 
 requirements:
   build:
     - {{ compiler('fortran') }}   # [not win]
     - {{ stdlib("c") }}           # [not win]
     - gfortran                    # [win]
-    - meson
+    - meson >=1.7.1
     - ninja
   run:
     - libgfortran                 # [win]
@@ -26,8 +33,11 @@ test:
   commands:
     - mf6 --help
     - mf6 --license
-    - mf6 --compiler  # [not osx]
+    - mf6 --compiler
     - mf6 --compiler-opt
+    # mf5to6 has no --help or --version flag and prompts on stdin
+    - test -f $PREFIX/bin/mf5to6                    # [unix]
+    - if not exist %LIBRARY_BIN%\mf5to6.exe exit 1  # [win]
 
 about:
   home: https://www.usgs.gov/software/modflow-6-usgs-modular-hydrologic-model

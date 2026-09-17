@@ -39,3 +39,10 @@ fi
 
 # install
 meson install -C ${BUILD_DIR}
+
+# mf5to6 is a separate meson project and is not reached by the top-level
+# meson.build, so it is configured, built, and installed on its own
+MF5TO6_BUILD_DIR="${SRC_DIR}/builddir_mf5to6"
+meson setup ${MESON_ARGS} ${MF5TO6_BUILD_DIR} ${SRC_DIR}/utils/mf5to6
+meson compile -C ${MF5TO6_BUILD_DIR} -j ${CPU_COUNT}
+meson install -C ${MF5TO6_BUILD_DIR}

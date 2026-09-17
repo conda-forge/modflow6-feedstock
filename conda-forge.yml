@@ -5,7 +5,8 @@ github:
 conda_build:
   pkg_format: '2'
 build_platform:
-  osx_arm64: osx_64
   linux_ppc64le: linux_64
   linux_aarch64: linux_64
+provider:
+  osx_arm64: azure
 test: native_and_emulated

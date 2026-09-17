@@ -32,3 +32,19 @@ popd
 :: install
 meson install -C %BUILD_DIR%
 if errorlevel 1 exit 1
+
+:: mf5to6 is a separate meson project and is not reached by the top-level
+:: meson.build, so it is configured, built, and installed on its own
+set "MF5TO6_BUILD_DIR=%SRC_DIR%\builddir_mf5to6"
+
+meson setup %MESON_OPTIONS% %MF5TO6_BUILD_DIR% %SRC_DIR%\utils\mf5to6
+if errorlevel 1 (
+  type %MF5TO6_BUILD_DIR%\meson-logs\meson-log.txt
+  exit 1
+)
+
+meson compile -C %MF5TO6_BUILD_DIR% -j %CPU_COUNT%
+if errorlevel 1 exit 1
+
+meson install -C %MF5TO6_BUILD_DIR%
+if errorlevel 1 exit 1
