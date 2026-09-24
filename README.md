@@ -1,7 +1,7 @@
 About modflow6-feedstock
 ========================
 
-Feedstock license: [BSD-3-Clause](https://github.com/conda-forge/fs-feedstock/blob/main/LICENSE.txt)
+Feedstock license: [BSD-3-Clause](https://github.com/conda-forge/modflow6-feedstock/blob/main/LICENSE.txt)
 
 Home: https://www.usgs.gov/software/modflow-6-usgs-modular-hydrologic-model
 
@@ -11,7 +11,7 @@ Summary: USGS Modular Hydrologic Model
 
 Development: https://github.com/MODFLOW-ORG/modflow6
 
-Documentation: https://water.usgs.gov/water-resources/software/MODFLOW-6/mf6io_6.8.0.pdf
+Documentation: https://water.usgs.gov/water-resources/software/MODFLOW-6/mf6io_6.8.1.pdf
 
 MODFLOW 6 is an object-oriented program and framework developed to provide
 a platform for supporting multiple models and multiple types of models
@@ -28,8 +28,8 @@ Current build status
 <table><tr>
     <td>GitHub Actions</td>
     <td>
-      <a href="https://github.com/conda-forge/fs-feedstock/actions/workflows/conda-build.yml">
-        <img src="https://github.com/conda-forge/fs-feedstock/actions/workflows/conda-build.yml/badge.svg?event=push&branch=main">
+      <a href="https://github.com/conda-forge/modflow6-feedstock/actions/workflows/conda-build.yml">
+        <img src="https://github.com/conda-forge/modflow6-feedstock/actions/workflows/conda-build.yml/badge.svg?event=push&branch=main">
       </a>
     </td>
   </tr>
@@ -39,8 +39,8 @@ Current build status
     <td>
       <details>
         <summary>
-          <a href="https://dev.azure.com/conda-forge/feedstock-builds/_build/latest?definitionId=336&branchName=main">
-            <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/fs-feedstock?branchName=main">
+          <a href="https://dev.azure.com/conda-forge/feedstock-builds/_build/latest?definitionId=9080&branchName=main">
+            <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/modflow6-feedstock?branchName=main">
           </a>
         </summary>
         <table>
@@ -48,8 +48,8 @@ Current build status
           <tbody><tr>
               <td>osx_arm64</td>
               <td>
-                <a href="https://dev.azure.com/conda-forge/feedstock-builds/_build/latest?definitionId=336&branchName=main">
-                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/fs-feedstock?branchName=main&jobName=osx&configuration=osx%20osx_arm64_" alt="variant">
+                <a href="https://dev.azure.com/conda-forge/feedstock-builds/_build/latest?definitionId=9080&branchName=main">
+                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/modflow6-feedstock?branchName=main&jobName=osx&configuration=osx%20osx_arm64_" alt="variant">
                 </a>
               </td>
             </tr>
